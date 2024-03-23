@@ -1,16 +1,9 @@
 ---
-- name: Install Apache
-  hosts: slave
-  become: yes
-
+- name: Install Apache2 
+  hosts: Slave1
+  become: true
   tasks:
-    - name: Install Apache
+    - name: Install Apache2 on Slave1
       apt:
         name: apache2
         state: present
-
-    - name: Start Apache service
-      service:
-        name: apache2
-        state: started
-        enabled: yes
